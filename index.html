@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tableau de Bord des Revenus</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>💰 Mon Tableau de Bord des Revenus</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>💰 Mon Tableau de Bord des Revenus</h1>
-  <p>Bienvenue sur votre espace de suivi financier.</p>
 
-  <form onsubmit="event.preventDefault(); addRevenue();">
-    <input type="text" id="description" placeholder="Description" required />
-    <input type="number" id="amount" placeholder="Montant (FCFA)" required />
-    <button type="submit">Ajouter</button>
-  </form>
+  <div class="container">
+    <h1>💰 Mon Tableau de Bord des Revenus</h1>
+    <p>Bienvenue sur votre espace de suivi financier.</p>
 
-  <table id="revenue-table" border="1" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Montant</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <div class="input-section">
+      <input type="text" id="description" placeholder="Description">
+      <input type="number" id="amount" placeholder="Montant (FCFA)">
+      <button onclick="addRevenue()">Ajouter</button>
+    </div>
 
-  <h2>Total : <span id="total">0</span> FCFA</h2>
+    <table id="revenue-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Montant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Les lignes seront ajoutées ici -->
+      </tbody>
+    </table>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <div class="summary">
+      <h2>Total : <span id=
+
