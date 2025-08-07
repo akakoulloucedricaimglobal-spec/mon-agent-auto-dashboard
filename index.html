@@ -1,34 +1,36 @@
-function addRevenue() {
-  const descInput = document.getElementById("description");
-  const amountInput = document.getElementById("amount");
-  const tableBody = document.querySelector("#revenue-table tbody");
-  const totalSpan = document.getElementById("total");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revenue Tracker Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Revenue Tracker</h1>
+    <div class="input-section">
+      <input type="text" id="description" placeholder="Description" />
+      <input type="number" id="amount" placeholder="Amount (FCFA)" />
+      <button onclick="addRevenue()">Add</button>
+    </div>
 
-  const desc = descInput.value.trim();
-  const amount = parseFloat(amountInput.value.trim());
+    <table id="revenue-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-  if (desc === "" || isNaN(amount)) {
-    alert("Please enter a valid description and amount.");
-    return;
-  }
+    <div class="summary">
+      <strong>Total:</strong> <span id="total">0</span> FCFA
+    </div>
+  </div>
 
-  const date = new Date().toLocaleDateString("fr-FR");
-  const row = document.createElement("tr");
-
-  row.innerHTML = `
-    <td>${date}</td>
-    <td>${desc}</td>
-    <td>${amount.toLocaleString()} FCFA</td>
-  `;
-
-  tableBody.appendChild(row);
-
-  // Update total
-  const currentTotal = parseFloat(totalSpan.textContent.replace(/\s/g, '')) || 0;
-  const newTotal = currentTotal + amount;
-  totalSpan.textContent = newTotal.toLocaleString();
-
-  // Clear inputs
-  descInput.value = "";
-  amountInput.value = "";
-}
+  <script src="script.js"></script>
+</body>
+</html>
