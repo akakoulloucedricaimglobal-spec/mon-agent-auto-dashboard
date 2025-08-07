@@ -2,20 +2,66 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mon Tableau de Bord des Revenus</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de Bord des Revenus</title>
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background: white;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    #total {
+      font-weight: bold;
+      font-size: 20px;
+      float: right;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>💰 Mon Tableau de Bord des Revenus</h1>
     <p>Bienvenue sur votre espace de suivi financier.</p>
 
-    <div class="input-section">
-      <input type="text" id="description" placeholder="Description" />
-      <input type="number" id="montant" placeholder="Montant (FCFA)" />
-      <button onclick="ajouterRevenu()">Ajouter</button>
-    </div>
+    <input type="text" id="description" placeholder="Description">
+    <input type="number" id="montant" placeholder="Montant">
+    <button onclick="ajouterRevenu()">Ajouter</button>
 
     <table>
       <thead>
@@ -24,14 +70,5 @@
           <th>Description</th>
           <th>Montant</th>
         </tr>
-      </thead>
-      <tbody id="revenu-table-body"></tbody>
-    </table>
-
-    <h2 class="summary">Total : <span id="total">0 FCFA</span></h2>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+      </thea
 
