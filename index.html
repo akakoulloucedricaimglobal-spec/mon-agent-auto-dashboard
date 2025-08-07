@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>💰 Mon Tableau de Bord des Revenus</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Tableau de Bord des Revenus</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
     <h1>💰 Mon Tableau de Bord des Revenus</h1>
     <p>Bienvenue sur votre espace de suivi financier.</p>
 
     <div class="input-section">
-      <input type="text" id="description" placeholder="Description">
-      <input type="number" id="amount" placeholder="Montant (FCFA)">
-      <button onclick="addRevenue()">Ajouter</button>
+      <input type="text" id="description" placeholder="Description" />
+      <input type="number" id="montant" placeholder="Montant (FCFA)" />
+      <button onclick="ajouterRevenu()">Ajouter</button>
     </div>
 
-    <table id="revenue-table">
+    <table>
       <thead>
         <tr>
           <th>Date</th>
@@ -25,11 +25,13 @@
           <th>Montant</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Les lignes seront ajoutées ici -->
-      </tbody>
+      <tbody id="revenu-table-body"></tbody>
     </table>
 
-    <div class="summary">
-      <h2>Total : <span id=
+    <h2 class="summary">Total : <span id="total">0 FCFA</span></h2>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
